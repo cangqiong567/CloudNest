@@ -35,3 +35,10 @@ backend/instance/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Migrations cache
+backend/migrations/__pycache__/
+backend/migrations/versions/__pycache__/
+
+# Python bytecode
+*.pyc
