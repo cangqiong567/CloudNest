@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    container_name: cloudnest-backend
+    env_file:
+      - ./backend/.env
+    volumes:
+      - uploads:/app/uploads
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/api/v1/auth/me')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build: ./frontend
+    container_name: cloudnest-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  uploads:

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+*.db
+*.sqlite3
+.env
+*.log
+!frontend/.gitignore
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads
+backend/uploads/
+backend/instance/
+
+# Claude
+.claude/
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
